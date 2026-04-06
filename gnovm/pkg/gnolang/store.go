@@ -590,6 +590,7 @@ func (ds *defaultStore) SetObject(oo Object) int64 {
 		hashbz := make([]byte, len(hash)+len(bz))
 		copy(hashbz, hash.Bytes())
 		copy(hashbz[HashSize:], bz)
+		fmt.Printf("[Store - SetObject] key=%s value=%x\n", key, bz)
 		ds.baseStore.Set([]byte(key), hashbz)
 		size = len(hashbz)
 		oo.GetObjectInfo().LastObjectSize = int64(size)
@@ -745,6 +746,7 @@ func (ds *defaultStore) SetType(tt Type) {
 		if tt != tt2 {
 			// this can happen for a variety of reasons.
 			// TODO classify them and optimize.
+			fmt.Printf("[Store - SetType] warning: type with id %q already exists but is different; overwriting\n", tid)
 			return
 		}
 	}
