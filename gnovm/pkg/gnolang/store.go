@@ -587,6 +587,8 @@ func (ds *defaultStore) SetObject(oo Object) int64 {
 	// save bytes to backend.
 	if ds.baseStore != nil {
 		key := backendObjectKey(oid)
+		pkgPath := PkgPathFromPkgID(oid.PkgID)
+		fmt.Printf("[Store - SetObject] pkgPath=%s, key=%s value=%x\n", pkgPath, key, bz)
 		hashbz := make([]byte, len(hash)+len(bz))
 		copy(hashbz, hash.Bytes())
 		copy(hashbz[HashSize:], bz)
