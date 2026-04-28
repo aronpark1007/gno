@@ -10,8 +10,5 @@ func main() {
 	println(m)
 }
 
-// Error:
-// main/const55a.gno:5:2-9: assignment mismatch: 3 variable(s) but 0 value(s)
-
 // TypeCheckError:
 // main/const55a.gno:5:8: missing init expr for l

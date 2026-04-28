@@ -15,8 +15,5 @@ func main() {
 	println(a)
 }
 
-// Error:
-// main/return_interface.gno:13:2-9: cannot use interface {} as []int
-
 // TypeCheckError:
 // main/return_interface.gno:13:6: cannot use x() (value of interface type any) as nat value in assignment: need type assertion

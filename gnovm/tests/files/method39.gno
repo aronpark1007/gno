@@ -12,8 +12,5 @@ func main() {
 	d.Foo() // want: method not found
 }
 
-// Error:
-// main/method39.gno:12:2-7: missing field Foo in main.Derived
-
 // TypeCheckError:
 // main/method39.gno:12:4: d.Foo undefined (type Derived has no field or method Foo)

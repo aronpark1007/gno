@@ -16,11 +16,5 @@ func main() {
 	println("znil == y", znil == y)
 }
 
-// Output:
-// y == znil false
-// znil == y false
-// y == znil true
-// znil == y true
-
 // TypeCheckError:
 // main/comp5.gno:7:2: declared and not used: x

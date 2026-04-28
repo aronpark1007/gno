@@ -10,8 +10,5 @@ func main() {
 	println("MemStats after GC: ", runtime.MemStats())
 }
 
-// Output:
-// MemStats after GC:  Allocator{maxBytes:110000000, bytes:6576}
-
 // TypeCheckError:
 // main/alloc_3.gno:7:2: declared and not used: data

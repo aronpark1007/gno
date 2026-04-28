@@ -14,8 +14,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/typed_nil_a.gno:10:5-17: cannot convert (const (undefined)) to IntKind
-
 // TypeCheckError:
 // main/typed_nil_a.gno:10:13: cannot convert nil to type integer

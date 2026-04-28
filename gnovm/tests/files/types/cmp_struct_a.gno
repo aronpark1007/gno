@@ -16,8 +16,5 @@ func main() {
 	fmt.Println("a == c:", a == c)
 }
 
-// Error:
-// main/cmp_struct_a.gno:15:25-31: main.Matrix is not comparable
-
 // TypeCheckError:
 // main/cmp_struct_a.gno:15:25: invalid operation: a == b (struct containing [2][2][]int cannot be compared); main/cmp_struct_a.gno:16:25: invalid operation: a == c (struct containing [2][2][]int cannot be compared)

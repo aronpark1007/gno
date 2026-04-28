@@ -5,8 +5,5 @@ func main() {
 	_ = s[:-1:2] // Panics because of negative index
 }
 
-// Error:
-// main/index6.gno:5:6-14: invalid argument: index must not be negative: (-1 <untyped> bigint)
-
 // TypeCheckError:
 // main/index6.gno:5:9: invalid argument: index -1 (constant of type int) must not be negative

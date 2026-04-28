@@ -9,8 +9,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/loopvar_err_1.gno:7:7-19: cannot use int as string
-
 // TypeCheckError:
 // main/loopvar_err_1.gno:7:18: cannot use i (variable of type int) as string value in variable declaration

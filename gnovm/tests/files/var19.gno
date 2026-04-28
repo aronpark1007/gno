@@ -7,8 +7,5 @@ func main() {
 	println(c)
 }
 
-// Error:
-// main/var19.gno:4:2-19: assignment mismatch: 3 variable(s) but 2 value(s)
-
 // TypeCheckError:
 // main/var19.gno:4:16: undefined: a

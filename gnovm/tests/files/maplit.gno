@@ -7,8 +7,5 @@ func main() {
 	fmt.Println(a)
 }
 
-// Error:
-// main/maplit.gno:6:7-32: duplicate key (0 int) in map literal
-
 // TypeCheckError:
 // main/maplit.gno:6:26: duplicate key 0 in map literal

@@ -15,8 +15,5 @@ func main() {
 	println(equal(x, y))
 }
 
-// Error:
-// main/type30.gno:15:10-21: cannot use main.String as string without explicit conversion
-
 // TypeCheckError:
 // main/type30.gno:15:19: cannot use y (variable of string type String) as string value in argument to equal

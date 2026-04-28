@@ -24,8 +24,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/eql_0f0.gno:19:5-16: invalid operation: (mismatched types <untyped> bigint and .uverse.error)
-
 // TypeCheckError:
 // main/eql_0f0.gno:19:5: cannot convert 1 (untyped int constant) to type interface{Error() string}

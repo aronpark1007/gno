@@ -10,8 +10,5 @@ func main() {
 	println(&i.(S).a)
 }
 
-// Output:
-// &(9 int)
-
 // TypeCheckError:
 // main/addressable_6b_err.gno:10:11: invalid operation: cannot take address of i.(S).a (value of type int)

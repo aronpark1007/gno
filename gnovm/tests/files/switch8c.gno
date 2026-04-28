@@ -11,8 +11,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/switch8c.gno:7:3-14: fallthrough statement out of place
-
 // TypeCheckError:
 // main/switch8c.gno:7:3: fallthrough statement out of place

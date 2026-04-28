@@ -13,8 +13,5 @@ func main() {
     println("wat???")
 }
 
-// Error:
-// main/for21.gno:7:17-25: continue statement out of place
-
 // TypeCheckError:
 // main/for21.gno:7:17: continue not in for statement

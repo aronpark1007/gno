@@ -6,8 +6,5 @@ func main() {
 	println(&i.([1]int)[0])
 }
 
-// Output:
-// &(1 int)
-
 // TypeCheckError:
 // main/addressable_6c_err.gno:6:11: invalid operation: cannot take address of i.([1]int)[0] (value of type int)

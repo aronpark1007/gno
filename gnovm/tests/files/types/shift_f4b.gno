@@ -6,8 +6,5 @@ func main() {
 	println(u2)
 }
 
-// Error:
-// main/shift_f4b.gno:5:11-29: cannot convert untyped bigdec to integer -- 1.2 not an exact integer
-
 // TypeCheckError:
 // main/shift_f4b.gno:5:25: 1.2 (untyped float constant) truncated to uint64

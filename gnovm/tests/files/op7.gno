@@ -13,8 +13,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/op7.gno:11:5-19: operator > not defined on: InterfaceKind
-
 // TypeCheckError:
 // main/op7.gno:11:5: invalid operation: err > invalidT (operator > not defined on interface)

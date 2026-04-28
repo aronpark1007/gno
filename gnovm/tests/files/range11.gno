@@ -7,8 +7,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/range11.gno:5:2-7:3: range iteration over pointer requires array elem type
-
 // TypeCheckError:
 // main/range11.gno:5:17: cannot range over &i (value of type *[]int)

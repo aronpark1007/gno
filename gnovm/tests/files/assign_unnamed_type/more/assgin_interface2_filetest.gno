@@ -10,8 +10,5 @@ func main() {
 	println(b)
 }
 
-// Output:
-// (slice[(1 int)] main.nat)
-
 // TypeCheckError:
 // main/assgin_interface2.gno:6:6: declared and not used: a

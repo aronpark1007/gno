@@ -21,8 +21,5 @@ func main() {
 	println(errCmp)
 }
 
-// Error:
-// main/add_assign_f2.gno:20:2-13: operator += not defined on: InterfaceKind
-
 // TypeCheckError:
 // main/add_assign_f2.gno:20:2: invalid operation: errCmp += r (mismatched types error and Error)

@@ -13,8 +13,5 @@ func main() {
 	println(a)
 }
 
-// Error:
-// main/unnamedtype0b.gno:11:2-7: cannot use []main.word as []int
-
 // TypeCheckError:
 // main/unnamedtype0b.gno:11:6: cannot use b (variable of type []word) as nat value in assignment

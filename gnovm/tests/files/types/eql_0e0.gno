@@ -23,8 +23,5 @@ func main() {
 	println(e1 == e2)
 }
 
-// Error:
-// main/eql_0e0.gno:23:10-18: invalid operation: (mismatched types main.Error1 and main.Error2)
-
 // TypeCheckError:
 // main/eql_0e0.gno:23:16: invalid operation: e1 == e2 (mismatched types Error1 and Error2)

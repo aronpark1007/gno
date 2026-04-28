@@ -5,8 +5,5 @@ func main() {
 	println(uint(a))
 }
 
-// Error:
-// main/convert6.gno:5:10-17: constant -1 overflows UintKind
-
 // TypeCheckError:
 // main/convert6.gno:5:15: constant -1 overflows uint

@@ -21,8 +21,5 @@ func main() {
 	println(ok)
 }
 
-// Error:
-// main/assign_type_assertion_f.gno:19:2-22: cannot assign to (const (1 <untyped> bigint))
-
 // TypeCheckError:
 // main/assign_type_assertion_f.gno:19:2: cannot assign to 1 (neither addressable nor a map index expression)

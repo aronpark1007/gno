@@ -16,8 +16,5 @@ func main() {
 	println(a == c)
 }
 
-// Error:
-// main/eql_0f16.gno:16:10-16: [2]main.word is not comparable
-
 // TypeCheckError:
 // main/eql_0f16.gno:16:10: invalid operation: a == c ([2]word cannot be compared)

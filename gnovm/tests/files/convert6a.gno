@@ -5,8 +5,5 @@ func main() {
 	println(uint8(a))
 }
 
-// Error:
-// main/convert6a.gno:5:10-18: constant -1 overflows Uint8Kind
-
 // TypeCheckError:
 // main/convert6a.gno:5:16: constant -1 overflows uint8

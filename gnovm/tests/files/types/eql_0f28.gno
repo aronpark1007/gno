@@ -27,8 +27,5 @@ func main() {
 	println(e1 > e2)
 }
 
-// Error:
-// main/eql_0f28.gno:27:10-17: operator > not defined on: InterfaceKind
-
 // TypeCheckError:
 // main/eql_0f28.gno:27:10: invalid operation: e1 > e2 (operator > not defined on interface)

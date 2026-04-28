@@ -12,8 +12,5 @@ func main() {
 	println(v)
 }
 
-// Output:
-// 2
-
 // TypeCheckError:
 // main/const49.gno:3:8: "io" imported and not used

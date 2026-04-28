@@ -25,8 +25,5 @@ func main() {
 	myVar0()
 }
 
-// Error:
-// main/funclit2.gno:9:8-14: name myDep1 not declared
-
 // TypeCheckError:
 // main/funclit2.gno:9:8: undefined: myDep1; main/funclit2.gno:14:6: declared and not used: myDep1

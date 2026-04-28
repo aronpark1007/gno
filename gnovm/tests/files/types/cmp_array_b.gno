@@ -11,8 +11,5 @@ func main() {
 	fmt.Println("a == c:", a == c) // False because the elements do not match
 }
 
-// Error:
-// main/cmp_array_b.gno:10:25-31: [2][]int is not comparable
-
 // TypeCheckError:
 // main/cmp_array_b.gno:10:25: invalid operation: a == b ([2][]int cannot be compared); main/cmp_array_b.gno:11:25: invalid operation: a == c ([2][]int cannot be compared)

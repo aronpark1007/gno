@@ -20,8 +20,5 @@ func main() {
     println(v)
 }
 
-// Error:
-// main/blankidentifier6.gno:18:13-14: cannot use _ as value or type
-
 // TypeCheckError:
 // main/blankidentifier6.gno:18:13: cannot use _ as value or type

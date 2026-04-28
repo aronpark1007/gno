@@ -12,8 +12,5 @@ var b = func() {
 	a()
 }
 
-// Error:
-// main/closure.gno:7:5: circular dependency: a -> b -> a
-
 // TypeCheckError:
 // main/closure.gno:7:5: initialization cycle for a; main/closure.gno:7:5: 	a refers to b; main/closure.gno:11:5: 	b refers to a

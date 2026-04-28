@@ -18,8 +18,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/eql_0b2.gno:14:5-18: invalid operation: (mismatched types <untyped> bigint and main.Error)
-
 // TypeCheckError:
 // main/eql_0b2.gno:14:10: invalid operation: 1 == Error(1) (mismatched types untyped int and Error)

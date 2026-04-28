@@ -7,8 +7,5 @@ func main() {
 	println(a % 1.2)
 }
 
-// Error:
-// main/bigdec2.gno:7:10-17: cannot convert untyped bigdec to integer -- 1.2 not an exact integer
-
 // TypeCheckError:
 // main/bigdec2.gno:7:14: 1.2 (untyped float constant) truncated to uint64

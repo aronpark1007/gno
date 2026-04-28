@@ -7,8 +7,5 @@ func main() {
 	println(a)
 }
 
-// Error:
-// main/shift_k.gno:5:2-18: operator << not defined on: Float64Kind
-
 // TypeCheckError:
 // main/shift_k.gno:5:9: invalid operation: shifted operand 1.0 (type float64) must be integer

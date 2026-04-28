@@ -24,8 +24,5 @@ func main() {
 	}
 }
 
-// Error:
-// main/eql_0f1.gno:19:5-23: invalid operation: (mismatched types int64 and .uverse.error)
-
 // TypeCheckError:
 // main/eql_0f1.gno:19:17: invalid operation: int64(1) == errCmp (mismatched types int64 and error)

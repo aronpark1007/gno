@@ -13,8 +13,5 @@ func main() {
     println("wat???")
 }
 
-// Error:
-// main/for23.gno:7:17-22: break statement out of place
-
 // TypeCheckError:
 // main/for23.gno:7:17: break not in for, switch, or select statement

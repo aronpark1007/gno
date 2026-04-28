@@ -27,19 +27,5 @@ func main() {
 	println("world")
 }
 
-// Output:
-// hello
-// world
-// fmt2 fmt3
-// fmt1
-//
-// f2 f3
-// f1
-//
-// p2 p3
-// p1
-//
-// bye1
-
 // TypeCheckError:
 // main/defer0.gno:9:11: invalid operation: invalid use of ... with built-in println

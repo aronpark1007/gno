@@ -23,8 +23,5 @@ func main() {
 	println(ok)
 }
 
-// Error:
-// main/assign_type_assertion_g.gno:20:2-22: want bool type got int
-
 // TypeCheckError:
 // main/assign_type_assertion_g.gno:20:10: cannot use animal.(Dog) (untyped bool value) as int value in assignment

@@ -9,8 +9,5 @@ func main() {
 	fmt.Printf("%T\n", r)
 }
 
-// Error:
-// main/explicit_conversion_1.gno:7:11-32: cannot convert StringKind to UintKind
-
 // TypeCheckError:
 // main/explicit_conversion_1.gno:7:16: cannot convert string("hello") (constant "hello" of type string) to type uint

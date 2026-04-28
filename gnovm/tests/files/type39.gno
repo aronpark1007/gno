@@ -18,8 +18,5 @@ func main() {
 	println(f.echo())
 }
 
-// Error:
-// main/type39.gno:7:1-9:2: invalid receiver type main.foo (base type is interface type)
-
 // TypeCheckError:
 // main/type39.gno:7:9: invalid receiver type foo (pointer or interface type)

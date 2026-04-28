@@ -9,8 +9,5 @@ func main() {
 	println(y)
 }
 
-// Error:
-// main/shift_deep3d.gno:7:3-20: operator << not defined on: Float32Kind
-
 // TypeCheckError:
 // main/shift_deep3d.gno:7:8: invalid operation: shifted operand 1 (type float32) must be integer

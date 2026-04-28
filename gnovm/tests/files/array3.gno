@@ -7,8 +7,5 @@ func main() {
 	fmt.Println(a)
 }
 
-// Error:
-// runtime error: index out of range [3] with length 3
-
 // TypeCheckError:
 // main/array3.gno:6:20: index 3 is out of bounds (>= 3)

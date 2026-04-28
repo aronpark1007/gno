@@ -10,8 +10,5 @@ func main() {
 	println(m)
 }
 
-// Error:
-// main/const55.gno:5:2-3: assignment mismatch: 1 variable(s) but 0 value(s)
-
 // TypeCheckError:
 // main/const55.gno:5:2: extra init expr at main/const55.gno:4:2

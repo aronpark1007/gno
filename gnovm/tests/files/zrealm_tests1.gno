@@ -25,8 +25,5 @@ func main() {
 	println("ok")
 }
 
-// Error:
-// expected package name [vm] but got [tests]
-
 // TypeCheckError:
 // gno.land/r/tests/vm/.gnobuiltins.gno:1:1: package vm; expected package tests

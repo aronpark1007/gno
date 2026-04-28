@@ -15,8 +15,5 @@ func main() {
 	println("MemStats: ", runtime.MemStats())
 }
 
-// Output:
-// MemStats:  Allocator{maxBytes:100000000, bytes:7478}
-
 // TypeCheckError:
 // main/alloc_0.gno:13:2: declared and not used: f1

@@ -23,8 +23,5 @@ func main() {
 	println(e1 & e2)
 }
 
-// Error:
-// main/and_e0.gno:23:10-17: invalid operation: e1<VPBlock(1,0)> & e2<VPBlock(1,1)> (mismatched types main.Error1 and main.Error2)
-
 // TypeCheckError:
 // main/and_e0.gno:23:10: invalid operation: e1 & e2 (mismatched types Error1 and Error2)

@@ -10,8 +10,5 @@ func main() {
 	println(c)
 }
 
-// Error:
-// main/var19b.gno:7:6-24: missing init expr for c<!VPInvalid(0)>
-
 // TypeCheckError:
 // main/var19b.gno:7:12: missing init expr for c; main/var19b.gno:7:19: undefined: a

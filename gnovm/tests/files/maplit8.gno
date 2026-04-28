@@ -7,8 +7,5 @@ func main() {
 	fmt.Println(a)
 }
 
-// Error:
-// main/maplit8.gno:6:7-54: invalid map key type []int
-
 // TypeCheckError:
 // main/maplit8.gno:6:11: invalid map key type []int

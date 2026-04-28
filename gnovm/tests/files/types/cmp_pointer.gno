@@ -19,8 +19,5 @@ func main() {
 	fmt.Println("p1 == p2:", p1 == p2Ptr)
 }
 
-// Error:
-// main/cmp_pointer.gno:19:27-38: invalid operation: (mismatched types *main.Person and *main.Worker)
-
 // TypeCheckError:
 // main/cmp_pointer.gno:19:33: invalid operation: p1 == p2Ptr (mismatched types *Person and *Worker)

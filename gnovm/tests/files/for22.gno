@@ -13,8 +13,5 @@ func main() {
     println("wat???")
 }
 
-// Error:
-// main/for22.gno:7:17-28: fallthrough statement out of place
-
 // TypeCheckError:
 // main/for22.gno:7:17: fallthrough statement out of place

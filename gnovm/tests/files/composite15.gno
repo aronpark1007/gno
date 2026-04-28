@@ -12,5 +12,3 @@ func main() {
 // TypeCheckError:
 // main/composite15.gno:6:3: index a must be integer constant; main/composite15.gno:7:3: index c must be integer constant
 
-// Error:
-// main/composite15.gno:5:7-8:3: slice/array literals may not contain non-const keys

@@ -13,8 +13,5 @@ func main() {
 	fmt.Println(b)
 }
 
-// Error:
-// main/recursive1c.gno:5:6-7:2: invalid recursive type: S -> S
-
 // TypeCheckError:
 // main/recursive1c.gno:5:6: invalid recursive type: S refers to itself

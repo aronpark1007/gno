@@ -10,8 +10,5 @@ func main() {
 	_ = T{f: 1, g: 2, h: 3, f: 4, h: 5}
 }
 
-// Error:
-// duplicate field name f in struct literal
-
 // TypeCheckError:
 // main/struct2b.gno:10:26: duplicate field name f in struct literal; main/struct2b.gno:10:32: duplicate field name h in struct literal

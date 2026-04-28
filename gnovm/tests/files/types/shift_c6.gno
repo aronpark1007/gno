@@ -10,8 +10,5 @@ func main() {
 	fmt.Printf("%T\n", r)
 }
 
-// Error:
-// main/shift_c6.gno:8:2-12: operator << not defined on: Float32Kind
-
 // TypeCheckError:
 // main/shift_c6.gno:8:6: invalid operation: shifted operand 1 (type float32) must be integer

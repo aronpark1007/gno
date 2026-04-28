@@ -15,8 +15,5 @@ func main() {
 	println(bb == fa)
 }
 
-// Error:
-// main/cmp_struct_c1.gno:15:10-18: invalid operation: (mismatched types main.bar and main.foo)
-
 // TypeCheckError:
 // main/cmp_struct_c1.gno:15:16: invalid operation: bb == fa (mismatched types bar and foo)
