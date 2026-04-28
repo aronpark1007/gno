@@ -355,6 +355,9 @@ func (opts *TestOptions) runTest(m *gno.Machine, pkgPath, fname string, content 
 				tcError = fmt.Sprintf("%v", err.Error())
 			}
 		}
+		if tcError != "" {
+			return runResult{TypeCheckError: tcError}
+		}
 		// Must parse before set pn&pv.
 		fn := m.MustParseFile(fname, string(content))
 		// Construct throwaway package and parse file.
@@ -394,6 +397,9 @@ func (opts *TestOptions) runTest(m *gno.Machine, pkgPath, fname string, content 
 			}); err != nil {
 				tcError = fmt.Sprintf("%v", err.Error())
 			}
+		}
+		if tcError != "" {
+			return runResult{TypeCheckError: tcError}
 		}
 		// Run decls and init functions.
 		m.RunMemPackage(mpkg, true)
