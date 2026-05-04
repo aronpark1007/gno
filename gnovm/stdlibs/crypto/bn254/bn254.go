@@ -10,15 +10,19 @@ import (
 var fpModulus = fp.Modulus()
 
 // X_g1Add mirrors EIP-196's ECADD precompile.
+// Per EIP-196, short inputs are right-padded with zeros to 128 bytes; excess bytes are ignored.
 func X_g1Add(input []byte) []byte {
-	if len(input) != 128 {
-		return nil
+	padded := make([]byte, 128)
+	if len(input) < 128 {
+		copy(padded, input)
+	} else {
+		copy(padded, input[:128])
 	}
-	p1, ok := parseG1(input[0:64])
+	p1, ok := parseG1(padded[0:64])
 	if !ok {
 		return nil
 	}
-	p2, ok := parseG1(input[64:128])
+	p2, ok := parseG1(padded[64:128])
 	if !ok {
 		return nil
 	}

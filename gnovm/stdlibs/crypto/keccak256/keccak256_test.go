@@ -1,3 +1,7 @@
+// Test vectors sourced from:
+//   https://eips.ethereum.org/EIPS/eip-1
+//   https://emn178.github.io/online-tools/keccak_256.html
+
 package keccak256
 
 import (

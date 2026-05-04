@@ -12,10 +12,11 @@ import (
 	libs_chain_params "github.com/gnolang/gno/gnovm/stdlibs/chain/params"
 	libs_chain_runtime "github.com/gnolang/gno/gnovm/stdlibs/chain/runtime"
 	libs_crypto_bn254 "github.com/gnolang/gno/gnovm/stdlibs/crypto/bn254"
-	libs_crypto_cometbls "github.com/gnolang/gno/gnovm/stdlibs/crypto/cometbls"
 	libs_crypto_ed25519 "github.com/gnolang/gno/gnovm/stdlibs/crypto/ed25519"
 	libs_crypto_keccak256 "github.com/gnolang/gno/gnovm/stdlibs/crypto/keccak256"
+	libs_crypto_merkle "github.com/gnolang/gno/gnovm/stdlibs/crypto/merkle"
 	libs_crypto_modexp "github.com/gnolang/gno/gnovm/stdlibs/crypto/modexp"
+	libs_ibc_ics23 "github.com/gnolang/gno/gnovm/stdlibs/ibc/ics23"
 	libs_crypto_sha256 "github.com/gnolang/gno/gnovm/stdlibs/crypto/sha256"
 	libs_math "github.com/gnolang/gno/gnovm/stdlibs/math"
 	libs_sys_params "github.com/gnolang/gno/gnovm/stdlibs/sys/params"
@@ -858,54 +859,6 @@ var nativeFuncs = [...]NativeFunc{
 		},
 	},
 	{
-		"crypto/cometbls",
-		"verifyZKP",
-		[]gno.FieldTypeExpr{
-			{NameExpr: *gno.Nx("p0"), Type: gno.X("string")},
-			{NameExpr: *gno.Nx("p1"), Type: gno.X("[]byte")},
-			{NameExpr: *gno.Nx("p2"), Type: gno.X("[]byte")},
-			{NameExpr: *gno.Nx("p3"), Type: gno.X("[]byte")},
-		},
-		[]gno.FieldTypeExpr{
-			{NameExpr: *gno.Nx("r0"), Type: gno.X("string")},
-		},
-		false,
-		func(m *gno.Machine) {
-			b := m.LastBlock()
-			var (
-				p0  string
-				rp0 = reflect.ValueOf(&p0).Elem()
-				p1  []byte
-				rp1 = reflect.ValueOf(&p1).Elem()
-				p2  []byte
-				rp2 = reflect.ValueOf(&p2).Elem()
-				p3  []byte
-				rp3 = reflect.ValueOf(&p3).Elem()
-			)
-
-			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
-			tv0.DeepFill(m.Store)
-			gno.Gno2GoValue(tv0, rp0)
-			tv1 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 1, "")).TV
-			tv1.DeepFill(m.Store)
-			gno.Gno2GoValue(tv1, rp1)
-			tv2 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 2, "")).TV
-			tv2.DeepFill(m.Store)
-			gno.Gno2GoValue(tv2, rp2)
-			tv3 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 3, "")).TV
-			tv3.DeepFill(m.Store)
-			gno.Gno2GoValue(tv3, rp3)
-
-			r0 := libs_crypto_cometbls.X_verifyZKP(p0, p1, p2, p3)
-
-			m.PushValue(gno.Go2GnoValue(
-				m.Alloc,
-				m.Store,
-				reflect.ValueOf(&r0).Elem(),
-			))
-		},
-	},
-	{
 		"crypto/ed25519",
 		"verify",
 		[]gno.FieldTypeExpr{
@@ -1017,6 +970,216 @@ var nativeFuncs = [...]NativeFunc{
 				m.Store,
 				reflect.ValueOf(&r0).Elem(),
 			))
+		},
+	},
+	{
+		"crypto/merkle",
+		"leafHash",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("[]byte")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  []byte
+				rp0 = reflect.ValueOf(&p0).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			r0 := libs_crypto_merkle.X_leafHash(p0)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
+		},
+	},
+	{
+		"crypto/merkle",
+		"innerHash",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p1"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("[]byte")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  []byte
+				rp0 = reflect.ValueOf(&p0).Elem()
+				p1  []byte
+				rp1 = reflect.ValueOf(&p1).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			tv1 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 1, "")).TV
+			tv1.DeepFill(m.Store)
+			gno.Gno2GoValue(tv1, rp1)
+			r0 := libs_crypto_merkle.X_innerHash(p0, p1)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
+		},
+	},
+	{
+		"crypto/merkle",
+		"hashFromByteSlices",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("[]byte")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  []byte
+				rp0 = reflect.ValueOf(&p0).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			r0 := libs_crypto_merkle.X_hashFromByteSlices(p0)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
+		},
+	},
+	{
+		"crypto/merkle",
+		"verifySimpleProof",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p1"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p2"), Type: gno.X("int")},
+			{NameExpr: *gno.Nx("p3"), Type: gno.X("int")},
+			{NameExpr: *gno.Nx("p4"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("bool")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  []byte
+				rp0 = reflect.ValueOf(&p0).Elem()
+				p1  []byte
+				rp1 = reflect.ValueOf(&p1).Elem()
+				p2  int
+				rp2 = reflect.ValueOf(&p2).Elem()
+				p3  int
+				rp3 = reflect.ValueOf(&p3).Elem()
+				p4  []byte
+				rp4 = reflect.ValueOf(&p4).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			tv1 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 1, "")).TV
+			tv1.DeepFill(m.Store)
+			gno.Gno2GoValue(tv1, rp1)
+			tv2 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 2, "")).TV
+			tv2.DeepFill(m.Store)
+			gno.Gno2GoValue(tv2, rp2)
+			tv3 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 3, "")).TV
+			tv3.DeepFill(m.Store)
+			gno.Gno2GoValue(tv3, rp3)
+			tv4 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 4, "")).TV
+			tv4.DeepFill(m.Store)
+			gno.Gno2GoValue(tv4, rp4)
+			r0 := libs_crypto_merkle.X_verifySimpleProof(p0, p1, p2, p3, p4)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
+		},
+	},
+	{
+		"ibc/ics23",
+		"verifyMembership",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("string")},
+			{NameExpr: *gno.Nx("p1"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p2"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p3"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p4"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("bool")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  string
+				rp0 = reflect.ValueOf(&p0).Elem()
+				p1  []byte
+				rp1 = reflect.ValueOf(&p1).Elem()
+				p2  []byte
+				rp2 = reflect.ValueOf(&p2).Elem()
+				p3  []byte
+				rp3 = reflect.ValueOf(&p3).Elem()
+				p4  []byte
+				rp4 = reflect.ValueOf(&p4).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			tv1 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 1, "")).TV
+			tv1.DeepFill(m.Store)
+			gno.Gno2GoValue(tv1, rp1)
+			tv2 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 2, "")).TV
+			tv2.DeepFill(m.Store)
+			gno.Gno2GoValue(tv2, rp2)
+			tv3 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 3, "")).TV
+			tv3.DeepFill(m.Store)
+			gno.Gno2GoValue(tv3, rp3)
+			tv4 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 4, "")).TV
+			tv4.DeepFill(m.Store)
+			gno.Gno2GoValue(tv4, rp4)
+			r0 := libs_ibc_ics23.X_verifyMembership(p0, p1, p2, p3, p4)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
+		},
+	},
+	{
+		"ibc/ics23",
+		"verifyNonMembership",
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("p0"), Type: gno.X("string")},
+			{NameExpr: *gno.Nx("p1"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p2"), Type: gno.X("[]byte")},
+			{NameExpr: *gno.Nx("p3"), Type: gno.X("[]byte")},
+		},
+		[]gno.FieldTypeExpr{
+			{NameExpr: *gno.Nx("r0"), Type: gno.X("bool")},
+		},
+		false,
+		func(m *gno.Machine) {
+			b := m.LastBlock()
+			var (
+				p0  string
+				rp0 = reflect.ValueOf(&p0).Elem()
+				p1  []byte
+				rp1 = reflect.ValueOf(&p1).Elem()
+				p2  []byte
+				rp2 = reflect.ValueOf(&p2).Elem()
+				p3  []byte
+				rp3 = reflect.ValueOf(&p3).Elem()
+			)
+			tv0 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 0, "")).TV
+			tv0.DeepFill(m.Store)
+			gno.Gno2GoValue(tv0, rp0)
+			tv1 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 1, "")).TV
+			tv1.DeepFill(m.Store)
+			gno.Gno2GoValue(tv1, rp1)
+			tv2 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 2, "")).TV
+			tv2.DeepFill(m.Store)
+			gno.Gno2GoValue(tv2, rp2)
+			tv3 := b.GetPointerTo(nil, gno.NewValuePathBlock(1, 3, "")).TV
+			tv3.DeepFill(m.Store)
+			gno.Gno2GoValue(tv3, rp3)
+			r0 := libs_ibc_ics23.X_verifyNonMembership(p0, p1, p2, p3)
+			m.PushValue(gno.Go2GnoValue(m.Alloc, m.Store, reflect.ValueOf(&r0).Elem()))
 		},
 	},
 	{
@@ -1564,10 +1727,11 @@ var initOrder = [...]string{
 	"crypto/cipher",
 	"crypto/chacha20",
 	"crypto/chacha20/rand",
-	"crypto/cometbls",
 	"crypto/keccak256",
+	"crypto/merkle",
 	"crypto/modexp",
 	"crypto/sha256",
+	"ibc/ics23",
 	"encoding/hex",
 	"crypto/cometblszk",
 	"crypto/ed25519",
