@@ -1,0 +1,138 @@
+{
+  "private_key_hex": "4e9444a6efd6d42725a250b650a781da2737ea308c839eaccb0f7f3dbd2fea77",
+  "address": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+  "address_hex": "ac3a30caa1f7f47c8b3485d26a99661f99f2a919",
+  "pub_key_bech32": "gpub1pgfj7ard9eg82cjtv4u4xetrwqer2dntxyfzxz3pqfx9xusae5ajg6n5mkyjeg8mn468hhdnaq4tuvuyenttgxm4gr0y62ag3p6",
+  "pub_key_hex": "024c53721dcd3b246a74dd892ca0fb9d747bddb3e82abe3384ccd6b41b7540de4d",
+  "chain_id": "dev",
+  "account_number": 7,
+  "sequence": 3,
+  "gas_wanted": 5000000,
+  "gas_fee": "1000000ugnot",
+  "memo": "gno amino fixture",
+  "unsigned_tx_json": {
+    "msg": [
+      {
+        "@type": "/vm.m_run",
+        "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+        "send": "",
+        "max_deposit": "",
+        "package": {
+          "name": "main",
+          "path": "",
+          "files": [
+            {
+              "name": "main.gno",
+              "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n"
+            }
+          ]
+        }
+      }
+    ],
+    "fee": {
+      "gas_wanted": "5000000",
+      "gas_fee": "1000000ugnot"
+    },
+    "signatures": null,
+    "memo": "gno amino fixture"
+  },
+  "msg_run_amino_json": {
+    "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+    "send": "",
+    "max_deposit": "",
+    "package": {
+      "name": "main",
+      "path": "",
+      "files": [
+        {
+          "name": "main.gno",
+          "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n"
+        }
+      ]
+    }
+  },
+  "msg_run_any_json": {
+    "@type": "/vm.m_run",
+    "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+    "send": "",
+    "max_deposit": "",
+    "package": {
+      "name": "main",
+      "path": "",
+      "files": [
+        {
+          "name": "main.gno",
+          "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n"
+        }
+      ]
+    }
+  },
+  "std_sign_doc_json": {
+    "chain_id": "dev",
+    "account_number": "7",
+    "sequence": "3",
+    "fee": {
+      "gas_wanted": "5000000",
+      "gas_fee": "1000000ugnot"
+    },
+    "msgs": [
+      {
+        "@type": "/vm.m_run",
+        "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+        "send": "",
+        "max_deposit": "",
+        "package": {
+          "name": "main",
+          "path": "",
+          "files": [
+            {
+              "name": "main.gno",
+              "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n"
+            }
+          ]
+        }
+      }
+    ],
+    "memo": "gno amino fixture"
+  },
+  "sign_bytes_string": "{\"account_number\":\"7\",\"chain_id\":\"dev\",\"fee\":{\"gas_fee\":\"1000000ugnot\",\"gas_wanted\":\"5000000\"},\"memo\":\"gno amino fixture\",\"msgs\":[{\"@type\":\"/vm.m_run\",\"caller\":\"g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4\",\"max_deposit\":\"\",\"package\":{\"files\":[{\"body\":\"package main\\n\\nimport core \\\"gno.land/r/aib/ibc/core\\\"\\n\\nfunc main() {\\n\\tclientID := core.CreateClient(core.MsgCreateClient{\\n\\t\\tClientType: \\\"gno\\\",\\n\\t\\tClientState: []byte{1, 2, 3},\\n\\t\\tConsensusState: []byte{4, 5, 6},\\n\\t})\\n\\tprintln(clientID)\\n}\\n\",\"name\":\"main.gno\"}],\"name\":\"main\",\"path\":\"\"},\"send\":\"\"}],\"sequence\":\"3\"}",
+  "sign_bytes_hex": "7b226163636f756e745f6e756d626572223a2237222c22636861696e5f6964223a22646576222c22666565223a7b226761735f666565223a223130303030303075676e6f74222c226761735f77616e746564223a2235303030303030227d2c226d656d6f223a22676e6f20616d696e6f2066697874757265222c226d736773223a5b7b224074797065223a222f766d2e6d5f72756e222c2263616c6c6572223a22673134736172706a3470376c3638657a653573686678347874787237766c393267656a7866647734222c226d61785f6465706f736974223a22222c227061636b616765223a7b2266696c6573223a5b7b22626f6479223a227061636b616765206d61696e5c6e5c6e696d706f727420636f7265205c22676e6f2e6c616e642f722f6169622f6962632f636f72655c225c6e5c6e66756e63206d61696e2829207b5c6e5c74636c69656e744944203a3d20636f72652e437265617465436c69656e7428636f72652e4d7367437265617465436c69656e747b5c6e5c745c74436c69656e74547970653a205c22676e6f5c222c5c6e5c745c74436c69656e7453746174653a205b5d627974657b312c20322c20337d2c5c6e5c745c74436f6e73656e73757353746174653a205b5d627974657b342c20352c20367d2c5c6e5c747d295c6e5c747072696e746c6e28636c69656e744944295c6e7d5c6e222c226e616d65223a226d61696e2e676e6f227d5d2c226e616d65223a226d61696e222c2270617468223a22227d2c2273656e64223a22227d5d2c2273657175656e6365223a2233227d",
+  "sign_bytes_sha256_hex": "44a195d3d2a2dcec1592d610712d2937e2af698c933cc450a1e84699702896c1",
+  "signature_hex": "59cf2a323ae7769d8cbcc2e1946f06b3b752abf76b25496ad8c9efff1b5be7273ed385e9b0eb4d551a95d93d2a92dfbbe4c42a7b9c5fb49cc5febc289892c43d",
+  "signed_tx_json": {
+    "msg": [
+      {
+        "@type": "/vm.m_run",
+        "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+        "send": "",
+        "max_deposit": "",
+        "package": {
+          "name": "main",
+          "path": "",
+          "files": [
+            {
+              "name": "main.gno",
+              "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n"
+            }
+          ]
+        }
+      }
+    ],
+    "fee": {
+      "gas_wanted": "5000000",
+      "gas_fee": "1000000ugnot"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "@type": "/tm.PubKeySecp256k1",
+          "value": "AkxTch3NOyRqdN2JLKD7nXR73bPoKr4zhMzWtBt1QN5N"
+        },
+        "signature": "Wc8qMjrndp2MvMLhlG8Gs7dSq/drJUlq2Mnv/xtb5yc+04XpsOtNVRqV2T0qkt+75MQqe5xftJzF/rwomJLEPQ=="
+      }
+    ],
+    "memo": "gno amino fixture"
+  },
+  "tx_bytes_hex": "0aba020a092f766d2e6d5f72756e12ac020a28673134736172706a3470376c3638657a653573686678347874787237766c393267656a786664773422ff010a046d61696e1af6010a086d61696e2e676e6f12e9017061636b616765206d61696e0a0a696d706f727420636f72652022676e6f2e6c616e642f722f6169622f6962632f636f7265220a0a66756e63206d61696e2829207b0a09636c69656e744944203a3d20636f72652e437265617465436c69656e7428636f72652e4d7367437265617465436c69656e747b0a0909436c69656e74547970653a2022676e6f222c0a0909436c69656e7453746174653a205b5d627974657b312c20322c20337d2c0a0909436f6e73656e73757353746174653a205b5d627974657b342c20352c20367d2c0a097d290a097072696e746c6e28636c69656e744944290a7d0a12130880ade204120c3130303030303075676e6f741aa8010a3a0a132f746d2e5075624b6579536563703235366b3112230a21024c53721dcd3b246a74dd892ca0fb9d747bddb3e82abe3384ccd6b41b7540de4d124059cf2a323ae7769d8cbcc2e1946f06b3b752abf76b25496ad8c9efff1b5be7273ed385e9b0eb4d551a95d93d2a92dfbbe4c42a7b9c5fb49cc5febc289892c43d1a2867317171717171717171717171717171717171717171717171717171717171717171716c757578652211676e6f20616d696e6f2066697874757265",
+  "tx_hash_sha256_hex": "d76f0ad1a2e0b9a7b17831e269b11e1fa6145ccb9d197e065e14f2fcaea36c4f"
+}

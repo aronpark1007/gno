@@ -1,0 +1,34 @@
+{
+  "fee": {
+    "gas_fee": "1000000ugnot",
+    "gas_wanted": "5000000"
+  },
+  "memo": "gno amino fixture",
+  "msg": [
+    {
+      "@type": "/vm.m_run",
+      "caller": "g14sarpj4p7l68eze5shfx4xtxr7vl92gejxfdw4",
+      "max_deposit": "",
+      "package": {
+        "files": [
+          {
+            "body": "package main\n\nimport core \"gno.land/r/aib/ibc/core\"\n\nfunc main() {\n\tclientID := core.CreateClient(core.MsgCreateClient{\n\t\tClientType: \"gno\",\n\t\tClientState: []byte{1, 2, 3},\n\t\tConsensusState: []byte{4, 5, 6},\n\t})\n\tprintln(clientID)\n}\n",
+            "name": "main.gno"
+          }
+        ],
+        "name": "main",
+        "path": ""
+      },
+      "send": ""
+    }
+  ],
+  "signatures": [
+    {
+      "pub_key": {
+        "@type": "/tm.PubKeySecp256k1",
+        "value": "AkxTch3NOyRqdN2JLKD7nXR73bPoKr4zhMzWtBt1QN5N"
+      },
+      "signature": "Wc8qMjrndp2MvMLhlG8Gs7dSq/drJUlq2Mnv/xtb5yc+04XpsOtNVRqV2T0qkt+75MQqe5xftJzF/rwomJLEPQ=="
+    }
+  ]
+}
